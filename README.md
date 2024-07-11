@@ -5,7 +5,8 @@ Add this towards the top of your YAML file:
 external_components:
   - source:
       type: git
-      url: https://github.com/jakea333/lc709203f_500mAh
+      url: https://github.com/jakea333/lc709203f
+      ref: 500mAh
     components: [ lc709203f ]
 ```
   
