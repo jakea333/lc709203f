@@ -1,11 +1,11 @@
-Organized files into folders, so that you can simply add a few lines to your YAML file and ESPHome will automatically download the files from this repo and use them when compiling your firmware. Tested with ESPHome 2023.8.2
+Organized files into folders, so that you can simply add a few lines to your YAML file and ESPHome will automatically download the files from this repo and use them when compiling your firmware. Tested with ESPHome 2024.6.6. This fork is hard coded for 500mAh cell capacity.
 
 Add this towards the top of your YAML file:
 ```
 external_components:
   - source:
       type: git
-      url: https://github.com/gfalgiano/lc709203f
+      url: https://github.com/jakea333/lc709203f_500mAh
     components: [ lc709203f ]
 ```
     
@@ -62,39 +62,43 @@ works to retreive these 4 values. I have hard coded my battery config in setup r
 ```
 switch:
   - platform: gpio
+    id: led_red
+    name: LED Red
     pin:
       number: GPIO16
       inverted: true
-    name: "${devicename} ledr"
-    id:  ${devicename}_ledr
   - platform: gpio
+    id: led_green
+    name: LED Green
     pin:
       number: GPIO17
       inverted: true
-    name: "${devicename} ledb"
-    id:  ${devicename}_ledb
   - platform: gpio
+    id: led_blue
+    name: LED Blue
     pin:
       number: GPIO18
       inverted: true
-    name: "${devicename} ledg"
-    id:  ${devicename}_ledg
 ```
 
 
 #### add stanza to yaml for fuel gauge 
 ```
- - platform: lc709203f
-    address: "0x0B"
+i2c:
+  id: bus_a
+
+sensor:
+  - platform: lc709203f
     i2c_id: bus_a
+    address: "0x0B"
     battery_voltage:
-      name: "${devicename} battery V"
+      name: Battery Volt
     battery_level:
-      name: "${devicename} battery lvl"
+      name: Battery Level
     icversion:
-      name: "${devicename} ic"
+      name: IC Version
     cell_charge:
-      name: "${devicename} cell charge"
+      name: Cell charge
     update_interval: 30s
 ```
 
