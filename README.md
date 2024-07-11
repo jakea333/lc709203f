@@ -1,11 +1,12 @@
-Organized files into folders, so that you can simply add a few lines to your YAML file and ESPHome will automatically download the files from this repo and use them when compiling your firmware. Tested with ESPHome 2024.6.6. This fork is hard coded for 500mAh cell capacity.
+Organized files into folders, so that you can simply add a few lines to your YAML file and ESPHome will automatically download the files from this repo and use them when compiling your firmware. Tested with ESPHome 2024.6.6. This branch is hard coded for 1000mAh cell capacity.
 
 Add this towards the top of your YAML file:
 ```
 external_components:
   - source:
       type: git
-      url: https://github.com/jakea333/lc709203f_500mAh
+      url: https://github.com/jakea333/lc709203f
+      ref: 1000mAh
     components: [ lc709203f ]
 ```
   
