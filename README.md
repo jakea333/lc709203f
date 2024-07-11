@@ -8,12 +8,6 @@ external_components:
       url: https://github.com/jakea333/lc709203f_500mAh
     components: [ lc709203f ]
 ```
-    
-In addition to the instructions below, you may need to add this to your YAML file:
-```
-i2c:
-  id: bus_a
-```
   
 ## initial support for lc709203f on  ESP32_Bat_Pro 
  This is an attempt to add wrappers to the code provided by EzSBC in https://github.com/EzSBC/ESP32_Bat_Pro by
