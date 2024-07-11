@@ -53,7 +53,7 @@ bool LC709203FComponent::begin( void )
   setPowerMode(LC709203F_POWER_OPERATE) ;
   setTemperatureMode(LC709203F_TEMPERATURE_THERMISTOR) ;
 
-  setCellCapacity(LC709203F_APA_2000MAH) ;     // jbo to suit the battery I am testing with
+  setCellCapacity(LC709203F_APA_500MAH) ;     // jbo to suit the battery I am testing with
   setCellProfile( LC709203_NOM3p7_Charge4p2 ); // jbo to suit the battery I am testing with
   
   return true;
@@ -71,7 +71,7 @@ void LC709203FComponent::setup() {
   Wire.begin();
   setPowerMode(LC709203F_POWER_OPERATE) ;
   setTemperatureMode(LC709203F_TEMPERATURE_THERMISTOR) ;
-  setCellCapacity(LC709203F_APA_2000MAH) ;    // jbo to suit the batery I am testing with
+  setCellCapacity(LC709203F_APA_500MAH) ;    // jbo to suit the batery I am testing with
   setCellProfile( LC709203_NOM3p7_Charge4p2 ); // jbo to suit the batery I am testing with
 
 }
